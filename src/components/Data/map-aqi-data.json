@@ -1,0 +1,62 @@
+[
+  {
+    "country": "United States of America",
+    "city": "Durango",
+    "AQI Value": 500,
+    "coordinates": [-107.8801, 37.2753]
+  },
+  {
+    "country": "United States of America",
+    "city": "Alpine",
+    "AQI Value": 163,
+    "coordinates": [-116.7665, 32.8351]
+  },
+  {
+    "country": "United States of America",
+    "city": "Pembroke Pines",
+    "AQI Value": 162,
+    "coordinates": [-80.2241, 26.0078]
+  },
+  {
+    "country": "United States of America",
+    "city": "Scott Lake",
+    "AQI Value": 158,
+    "coordinates": [-80.241, 25.9484]
+  },
+  {
+    "country": "United States of America",
+    "city": "Royal Oak",
+    "AQI Value": 157,
+    "coordinates": [-83.1446, 42.4895]
+  },
+  {
+    "country": "United States of America",
+    "city": "Edinburg",
+    "AQI Value": 156,
+    "coordinates": [-98.1633, 26.3017]
+  },
+  {
+    "country": "United States of America",
+    "city": "Whittier",
+    "AQI Value": 154,
+    "coordinates": [-118.0328, 33.9792]
+  },
+  {
+    "country": "United States of America",
+    "city": "West Puente Valley",
+    "AQI Value": 154,
+    "coordinates": [-117.9659, 34.0519]
+  },
+  {
+    "country": "United States of America",
+    "city": "Mission",
+    "AQI Value": 154,
+    "coordinates": [-98.3253, 26.2159]
+  },
+  {
+    "country": "United States of America",
+    "city": "Inkster",
+    "AQI Value": 154,
+    "coordinates": [-83.2934, 42.2942]
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "country": "China",
+    "city": "shanghai, China",
+    "AQI value": 156,
+    "CO AQI Value": 4,
+    "Ozone AQI Value": 156,
+    "NO2 AQI Value": 8,
+    "PM2.5 AQI Value": 152
+  },
+  {
+    "country": "Russian Federation",
+    "city": "Praskoveya,Russian Federation",
+    "AQI value": 51,
+    "CO AQI Value": 1,
+    "Ozone AQI Value": 36,
+    "NO2 AQI Value": 0,
+    "PM2.5 AQI Value": 51
+  },
+  {
+    "country": "Italy",
+    "city": "Priolo Gargallo,Italy",
+    "AQI value": 66,
+    "CO AQI Value": 1,
+    "Ozone AQI Value": 39,
+    "NO2 AQI Value": 2,
+    "PM2.5 AQI Value": 66
+  }
+]

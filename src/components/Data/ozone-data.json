@@ -1,0 +1,77 @@
+[
+  {
+    "country": "Iran",
+    "city": "Eslamshahr",
+    "Ozone AQI Value": 235
+  },
+  {
+    "country": "Iran",
+    "city": "Karaj",
+    "Ozone AQI Value": 222
+  },
+  {
+    "country": "Iran",
+    "city": "Qom",
+    "Ozone AQI Value": 214
+  },
+  {
+    "country": "China",
+    "city": "Jinan",
+    "Ozone AQI Value": 210
+  },
+  {
+    "country": "Iran",
+    "city": "Robat Karim",
+    "Ozone AQI Value": 210
+  },
+  {
+    "country": "China",
+    "city": "Dongkan",
+    "Ozone AQI Value": 209
+  },
+  {
+    "country": "Malaysia",
+    "city": "Miri",
+    "Ozone AQI Value": 209
+  },
+  {
+    "country": "Indonesia",
+    "city": "Cikupa",
+    "Ozone AQI Value": 207
+  },
+  {
+    "country": "China",
+    "city": "Zhangdian",
+    "Ozone AQI Value": 207
+  },
+  {
+    "country": "China",
+    "city": "Haian",
+    "Ozone AQI Value": 207
+  },
+  {
+    "country": "China",
+    "city": "Jinsha",
+    "Ozone AQI Value": 207
+  },
+  {
+    "country": "China",
+    "city": "Shaping",
+    "Ozone AQI Value": 207
+  },
+  {
+    "country": "China",
+    "city": "Taizhou",
+    "Ozone AQI Value": 206
+  },
+  {
+    "country": "China",
+    "city": "Luqiao",
+    "Ozone AQI Value": 206
+  },
+  {
+    "country": "China",
+    "city": "Jingcheng",
+    "Ozone AQI Value": 206
+  }
+]

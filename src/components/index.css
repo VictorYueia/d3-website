@@ -1,0 +1,34 @@
+ .container {
+    display: flex;
+    height: 100vh;
+  }
+  
+.left-side {
+    flex-basis: 33.33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    height: 100%; 
+    padding-left: 30px;
+    padding-right:30px;
+    font-size: 25px;
+    font-weight: bolder;
+    color: white;
+  }
+
+p {font-family:"Times New Roman", Times, serif;}
+  
+.right-side {
+    flex-basis: 66.67%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+.text {
+    text-align: center;
+  }
+

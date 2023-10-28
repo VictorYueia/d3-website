@@ -1,0 +1,33 @@
+.bar-aqi {
+    fill: #a6afbd;
+  }
+  
+  .bar-co {
+    fill: #92a1a4;
+  }
+
+  .bar-ozone {
+    fill: #556062;
+  }
+
+  .bar-no2 {
+    fill: #444c4d;
+  }
+
+  .bar-pm25 {
+    fill: #303535;
+  }
+
+  .label-aqi, .label-co,.label-ozone,.label-no2,.label-pm25  {
+    font-size: 12px;
+  }
+
+.clickable_text {
+    font-size: 25px;
+    transition: font-size 0.3s ease;
+  }
+
+  .clickable_text:hover {
+    cursor: pointer;
+    font-size: 28px;
+  }

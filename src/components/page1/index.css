@@ -1,0 +1,14 @@
+
+  .co-bar {
+    fill: #a1b4b8;
+  }
+
+  .clickable_text {
+    font-size: 25px;
+    transition: font-size 0.3s ease;
+  }
+
+  .clickable_text:hover {
+    cursor: pointer;
+    font-size: 28px;
+  }

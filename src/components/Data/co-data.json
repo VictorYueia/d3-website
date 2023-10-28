@@ -1,0 +1,62 @@
+[
+  {
+    "country": "United States of America",
+    "city": "Durango",
+    "CO AQI Value": 133,
+    "coordinates": [-107.8801, 37.2753]
+  },
+  {
+    "country": "United States of America",
+    "city": "Pembroke Pines",
+    "CO AQI Value": 6,
+    "coordinates": [-80.2241, 26.0078]
+  },
+  {
+    "country": "United States of America",
+    "city": "Scott Lake",
+    "CO AQI Value": 6,
+    "coordinates": [-80.2308, 25.9482]
+  },
+  {
+    "country": "United States of America",
+    "city": "Saint James",
+    "CO AQI Value": 5,
+    "coordinates": [-73.1575, 40.872]
+  },
+  {
+    "country": "United States of America",
+    "city": "East Northport",
+    "CO AQI Value": 5,
+    "coordinates": [-73.3257, 40.8665]
+  },
+  {
+    "country": "United States of America",
+    "city": "Alpine",
+    "CO AQI Value": 5,
+    "coordinates": [-116.7675, 32.8351]
+  },
+  {
+    "country": "United States of America",
+    "city": "Pico Rivera",
+    "CO AQI Value": 5,
+    "coordinates": [-118.0853, 33.9831]
+  },
+  {
+    "country": "United States of America",
+    "city": "Royal Oak",
+    "CO AQI Value": 5,
+    "coordinates": [-83.1446, 42.4895]
+  },
+  {
+    "country": "United States of America",
+    "city": "Commack",
+    "CO AQI Value": 5,
+    "coordinates": [-73.2942, 40.8429]
+  },
+  {
+    "country": "United States of America",
+    "city": "Hamtramck",
+    "CO AQI Value": 4,
+    "coordinates": [-83.0496, 42.3928]
+  }
+]
