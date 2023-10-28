@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import * as d3 from "d3";
-import jsonData from "../Data/pm25-data.json";
+import jsonData from "../Data/co-chart-data.json";
 
 import "./index.css";
 
-function PM25Chart() {
+function CoChart() {
   const chartRef = useRef();
   useEffect(() => {
     const margin = { top: 20, right: 20, bottom: 60, left: 60 };
@@ -27,7 +27,7 @@ function PM25Chart() {
 
     const yScale = d3
       .scaleLinear()
-      .domain([0, d3.max(jsonData, (d) => d["PM2.5 AQI Value"])])
+      .domain([0, d3.max(jsonData, (d) => d["CO AQI Value"])])
       .range([height, 0]);
 
     svg
@@ -37,9 +37,9 @@ function PM25Chart() {
       .append("rect")
       .attr("class", "co-bar")
       .attr("x", (d) => xScale(d.city))
-      .attr("y", (d) => yScale(d["PM2.5 AQI Value"]))
+      .attr("y", (d) => yScale(d["CO AQI Value"]))
       .attr("width", xScale.bandwidth())
-      .attr("height", (d) => height - yScale(d["PM2.5 AQI Value"]));
+      .attr("height", (d) => height - yScale(d["CO AQI Value"]));
 
     svg
       .append("g")
@@ -52,7 +52,7 @@ function PM25Chart() {
       .style("text-anchor", "middle")
       .style("font-size", "18px")
       .style("font-weight", "bolder")
-      .text("Chart4: 15 cities with the worst PM2.5 AQI values in USA");
+      .text("Chart4: 15 cities with the worst CO AQI values worldwide");
 
     svg.append("g").call(d3.axisLeft(yScale));
   }, []);
@@ -60,4 +60,4 @@ function PM25Chart() {
   return <svg ref={chartRef} />;
 }
 
-export default PM25Chart;
+export default CoChart;

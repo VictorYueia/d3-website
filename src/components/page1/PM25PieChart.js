@@ -90,12 +90,14 @@ const PieChart = () => {
 
     svg
       .append("text")
-      .attr("x", width / 2)
+      .attr("x", width / 2 + 10)
       .attr("y", height + 10)
       .style("text-anchor", "middle")
       .style("font-size", "18px")
       .style("font-weight", "bolder")
-      .text("Chart2: Proportion of cities displayed according to PM2.5 AQI");
+      .text(
+        "Chart2: Proportion of cities displayed according to PM2.5 AQI worldwide"
+      );
   }, []);
 
   return <svg ref={ref}></svg>;

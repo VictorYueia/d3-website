@@ -7,6 +7,9 @@ const PageOne = () => {
   const [showMapChart, setShowMapChart] = useState(true);
   return (
     <div className="section">
+      <div className="title-container">
+        <h1>Haze and Heartbeats</h1>
+      </div>
       <div className="container">
         <div className="left-side" style={{ backgroundColor: "#78C1F3" }}>
           <p onClick={() => setShowMapChart(true)} className="clickable_text">
