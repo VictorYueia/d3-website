@@ -18,7 +18,7 @@ const jsonData = [
 ];
 
 function AtAqiChart() {
-  const chartRef = useRef(); // 创建一个ref用于选择DOM元素
+  const chartRef = useRef(); 
   useEffect(() => {
     const margin = { top: 20, right: 20, bottom: 60, left: 60 };
     const width = 700 - margin.left - margin.right;
@@ -49,7 +49,7 @@ function AtAqiChart() {
             d["Ozone AQI Value"],
             d["NO2 AQI Value"],
             d["PM2.5 AQI Value"],
-          ]) //添加新的度量值
+          ]) 
         ),
       ])
       .range([height, 0]);
@@ -59,17 +59,17 @@ function AtAqiChart() {
       .data(jsonData)
       .join("g")
       .attr("class", "bar-group")
-      .attr("transform", (d) => `translate(${xScale(d.city)}, 0)`); // 移动整个组到正确的位置
+      .attr("transform", (d) => `translate(${xScale(d.city)}, 0)`); 
 
-    const barWidth = xScale.bandwidth() / 5; // 柱宽
+    const barWidth = xScale.bandwidth() / 5; 
 
     // AQI bar
     bars
       .selectAll(".bar-aqi")
-      .data((d) => [d]) // 使用数组包装数据使得每一组只有一个数据元素
+      .data((d) => [d]) 
       .join("rect")
       .attr("class", "bar-aqi")
-      .attr("x", 0) // 第一个柱子的 x 坐标为 0
+      .attr("x", 0) 
       .attr("y", (d) => yScale(d["AQI Value"]))
       .attr("width", barWidth)
       .attr("height", (d) => height - yScale(d["AQI Value"]));
@@ -79,9 +79,9 @@ function AtAqiChart() {
       .data((d) => [d])
       .join("text")
       .attr("class", "label-aqi")
-      .attr("x", 0 + barWidth / 2) // 将文本放置在柱子中间
-      .attr("y", (d) => yScale(d["AQI Value"]) - 2) // 将文本放置在柱子顶部稍微偏上的位置
-      .attr("text-anchor", "middle") // 让文本在指定位置居中
+      .attr("x", 0 + barWidth / 2) 
+      .attr("y", (d) => yScale(d["AQI Value"]) - 2) 
+      .attr("text-anchor", "middle") 
       .text("AQI");
 
     // CO bar bar
@@ -113,7 +113,7 @@ function AtAqiChart() {
       .data((d) => [d])
       .join("rect")
       .attr("class", "bar-ozone")
-      .attr("x", barWidth * 2) // 将第三个柱子放置在第二个柱子的右边
+      .attr("x", barWidth * 2) 
       .attr("y", (d) => yScale(d["Ozone AQI Value"]))
       .attr("width", barWidth)
       .attr("height", (d) => height - yScale(d["Ozone AQI Value"]))
@@ -183,7 +183,7 @@ function AtAqiChart() {
 
     svg
       .append("text")
-      .attr("transform", `translate(${width / 2}, ${height + margin.top + 20})`) // 将标签放置在 x 轴下方适当的位置
+      .attr("transform", `translate(${width / 2}, ${height + margin.top + 20})`) 
       .style("text-anchor", "middle")
       .text("Chart8: The AQI values of Atlanta");
 
