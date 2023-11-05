@@ -41,6 +41,20 @@ function OZoneChart() {
       .attr("width", xScale.bandwidth())
       .attr("height", (d) => height - yScale(d["Ozone AQI Value"]));
 
+    // Add text labels to the bars
+    svg
+      .selectAll(".label") // Select classes that don't exist yet
+      .data(jsonData)
+      .enter()
+      .append("text")
+      .text((d) => d["Ozone AQI Value"]) // Specify the text/value you want to display
+      .attr("x", (d) => xScale(d.city) + xScale.bandwidth() / 2) // Position the label in the center of the bar
+      .attr("y", (d) => yScale(d["Ozone AQI Value"]) - 5) // Position the label slightly above the top of the bar
+      .attr("text-anchor", "middle") // Center align the text
+      .style("font-size", "12px")
+      .style("font-weight", "bolder")
+      .style("fill", "black");
+
     svg
       .append("g")
       .attr("transform", `translate(0, ${height})`)

@@ -61,31 +61,39 @@ const PieChart = () => {
       .append("text")
       .attr("transform", (d) => `translate(${arc.centroid(d)})`)
       .attr("text-anchor", "middle")
-      .style("visibility", "hidden") // Make the labels initially hidden
-      .text((d) => d.data.category)
-      .style("font-weight", "bolder");
+      .style("visibility", "hidden"); // Make the labels initially hidden
+
+    labels
+      .append("tspan")
+      .text((d) => `${d.data.category}`)
+      .style("font-weight", "bolder")
+      .attr("x", 0)
+      .attr("dy", "1.2em"); // Use dy to adjust vertical spacing between tspan elements
+
+    labels
+      .append("tspan")
+      .text((d) => `${d.data.percentage}%`)
+      .style("font-weight", "bolder")
+      .attr("x", 0)
+      .attr("dy", "2.4em"); // Adjust as needed
 
     // Add hover event listener to the arcs
     arcs
       .on("mouseover", function (event, d) {
-        // Show the label of the hovered arc
+        d3.select(this).select("path").attr("d", arcOver);
         labels
           .filter(function (d2) {
             return d2 === d;
           })
           .style("visibility", "visible");
-        // Increase the size of the hovered arc
-        d3.select(this).select("path").attr("d", arcOver);
       })
       .on("mouseout", function (event, d) {
-        // Hide the label when not hovering
+        d3.select(this).select("path").attr("d", arc);
         labels
           .filter(function (d2) {
             return d2 === d;
           })
           .style("visibility", "hidden");
-        // Return the arc back to its original size
-        d3.select(this).select("path").attr("d", arc);
       });
 
     svg

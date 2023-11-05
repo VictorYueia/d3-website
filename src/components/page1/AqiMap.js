@@ -60,7 +60,7 @@ function AqiMap() {
         return projection(d.coordinates)[1];
       })
       .text(function (d) {
-        return d.city;
+        return `${d.city}:${d["AQI Value"]}`;
       })
       .attr("font-size", "15px")
       .attr("font-weight", "bold")

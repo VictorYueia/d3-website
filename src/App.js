@@ -1,6 +1,4 @@
-import * as d3 from "d3";
-import { useState } from "react";
-// import LinePlot from "./components/page1";
+import HeaderPage from "./components/header";
 import PageOne from "./components/page1";
 import PageTwo from "./components/page2";
 import PageThree from "./components/page3";
@@ -19,6 +17,7 @@ function App() {
       render={({ state, fullpageApi }) => {
         return (
           <ReactFullpage.Wrapper>
+            <HeaderPage />
             <PageOne />
             <PageTwo />
             <PageThree />

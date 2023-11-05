@@ -32,7 +32,7 @@ function AtMap() {
 
     const path = d3.geoPath().projection(projection);
 
-    svg
+    const states = svg
       .append("g")
       .selectAll("path")
       .data(feature(us, us.objects.states).features)
@@ -45,11 +45,42 @@ function AtMap() {
           : colorScale("Other");
       });
 
+    // Add hover effects
+    states
+      .on("mouseover", function (event, d) {
+        // Change the fill color
+        d3.select(this).style("fill", "green");
+
+        // Append text label for the state's name
+        svg
+          .append("text")
+          .attr("class", "state-label")
+          .attr("x", path.centroid(d)[0])
+          .attr("y", path.centroid(d)[1])
+          .text(d.properties.name)
+          .attr("font-size", "15px")
+          .attr("font-weight", "bold")
+          .attr("text-anchor", "middle")
+          .attr("fill", "black");
+      })
+      .on("mouseout", function (event, d) {
+        // Reset the fill color
+        d3.select(this).style(
+          "fill",
+          d.properties.name === "Georgia"
+            ? colorScale("Georgia")
+            : colorScale("Other")
+        );
+
+        // Remove the state label
+        svg.select(".state-label").remove();
+      });
+
     // Create a star symbol generator
     const star = d3.symbol().type(d3.symbolStar).size(100);
 
     // Add city points as star symbols
-    const stars = svg
+    svg
       .selectAll(".star")
       .data(data)
       .enter()
@@ -92,7 +123,7 @@ function AtMap() {
       .style("font-size", "18px")
       .style("font-weight", "bolder")
       .text("Chart7: The location of Atlanta");
-  }, [data]);
+  }, []);
 
   return <svg ref={ref} style={{ width: width, height: height }} />;
 }

@@ -23,13 +23,13 @@ const PieChart = () => {
 
     const width = 600;
     const height = 600;
-    const radius = Math.min(width, height) / 2 - 50;
+    const radius = Math.min(width, height) / 2 - 30;
 
     const arc = d3.arc().outerRadius(radius).innerRadius(0);
     const arcOver = d3
       .arc()
       .outerRadius(radius + 10)
-      .innerRadius(0); // Arc for mouseover state
+      .innerRadius(0);
 
     const svg = d3
       .select(ref.current)
@@ -53,19 +53,41 @@ const PieChart = () => {
       .attr("d", arc)
       .attr("fill", (d) => color(d.data.category));
 
-    arcs
+    const labels = arcs
       .append("text")
       .attr("transform", (d) => `translate(${arc.centroid(d)})`)
       .attr("text-anchor", "middle")
-      .text((d) => d.data.category)
-      .style("font-weight", "bolder");
+      .style("visibility", "hidden");
 
-    // Add hover event listener to the arcs
+    labels
+      .append("tspan")
+      .text((d) => `distribution:${d.data.category}`)
+      .style("font-weight", "bolder")
+      .attr("x", 0)
+      .attr("dy", "1.2em"); // Use dy to adjust vertical spacing between tspan elements
+
+    labels
+      .append("tspan")
+      .text((d) => `percentage:${d.data.percentage}%`)
+      .style("font-weight", "bolder")
+      .attr("x", 0)
+      .attr("dy", "2.4em"); // Adjust as needed
+
     arcs
       .on("mouseover", function (event, d) {
+        labels
+          .filter(function (d2) {
+            return d2 === d;
+          })
+          .style("visibility", "visible");
         d3.select(this).select("path").attr("d", arcOver);
       })
       .on("mouseout", function (event, d) {
+        labels
+          .filter(function (d2) {
+            return d2 === d;
+          })
+          .style("visibility", "hidden");
         d3.select(this).select("path").attr("d", arc);
       });
 

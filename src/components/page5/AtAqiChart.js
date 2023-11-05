@@ -18,7 +18,7 @@ const jsonData = [
 ];
 
 function AtAqiChart() {
-  const chartRef = useRef(); 
+  const chartRef = useRef();
   useEffect(() => {
     const margin = { top: 20, right: 20, bottom: 60, left: 60 };
     const width = 700 - margin.left - margin.right;
@@ -49,7 +49,7 @@ function AtAqiChart() {
             d["Ozone AQI Value"],
             d["NO2 AQI Value"],
             d["PM2.5 AQI Value"],
-          ]) 
+          ])
         ),
       ])
       .range([height, 0]);
@@ -59,17 +59,17 @@ function AtAqiChart() {
       .data(jsonData)
       .join("g")
       .attr("class", "bar-group")
-      .attr("transform", (d) => `translate(${xScale(d.city)}, 0)`); 
+      .attr("transform", (d) => `translate(${xScale(d.city)}, 0)`);
 
-    const barWidth = xScale.bandwidth() / 5; 
+    const barWidth = xScale.bandwidth() / 5;
 
     // AQI bar
     bars
       .selectAll(".bar-aqi")
-      .data((d) => [d]) 
+      .data((d) => [d])
       .join("rect")
       .attr("class", "bar-aqi")
-      .attr("x", 0) 
+      .attr("x", 0)
       .attr("y", (d) => yScale(d["AQI Value"]))
       .attr("width", barWidth)
       .attr("height", (d) => height - yScale(d["AQI Value"]));
@@ -79,10 +79,11 @@ function AtAqiChart() {
       .data((d) => [d])
       .join("text")
       .attr("class", "label-aqi")
-      .attr("x", 0 + barWidth / 2) 
-      .attr("y", (d) => yScale(d["AQI Value"]) - 2) 
-      .attr("text-anchor", "middle") 
-      .text("AQI");
+      .attr("x", 0 + barWidth / 2)
+      .attr("y", (d) => yScale(d["AQI Value"]) - 2)
+      .attr("text-anchor", "middle")
+      .text((d) => `AQI: ${d["AQI Value"]}`)
+      .style("font-weight", "bolder");
 
     // CO bar bar
     bars
@@ -105,7 +106,8 @@ function AtAqiChart() {
       .attr("x", barWidth + barWidth / 2)
       .attr("y", (d) => yScale(d["CO AQI Value"]) - 2)
       .attr("text-anchor", "middle")
-      .text("CO");
+      .text((d) => `CO: ${d["CO AQI Value"]}`)
+      .style("font-weight", "bolder");
 
     // Ozone AQI bar
     bars
@@ -113,7 +115,7 @@ function AtAqiChart() {
       .data((d) => [d])
       .join("rect")
       .attr("class", "bar-ozone")
-      .attr("x", barWidth * 2) 
+      .attr("x", barWidth * 2)
       .attr("y", (d) => yScale(d["Ozone AQI Value"]))
       .attr("width", barWidth)
       .attr("height", (d) => height - yScale(d["Ozone AQI Value"]))
@@ -128,7 +130,8 @@ function AtAqiChart() {
       .attr("x", barWidth * 2 + barWidth / 2)
       .attr("y", (d) => yScale(d["Ozone AQI Value"]) - 2)
       .attr("text-anchor", "middle")
-      .text("Ozone");
+      .text((d) => `Ozone: ${d["Ozone AQI Value"]}`)
+      .style("font-weight", "bolder");
 
     //NO2 AQI bar
     bars
@@ -151,7 +154,8 @@ function AtAqiChart() {
       .attr("x", barWidth * 3 + barWidth / 2)
       .attr("y", (d) => yScale(d["NO2 AQI Value"]) - 2)
       .attr("text-anchor", "middle")
-      .text("NO2");
+      .text((d) => `NO2: ${d["NO2 AQI Value"]}`)
+      .style("font-weight", "bolder");
 
     //PM2.5 AQI bar
     bars
@@ -174,7 +178,8 @@ function AtAqiChart() {
       .attr("x", barWidth * 4 + barWidth / 2)
       .attr("y", (d) => yScale(d["PM2.5 AQI Value"]) - 2)
       .attr("text-anchor", "middle")
-      .text("PM2.5");
+      .text((d) => `PM2.5:${d["PM2.5 AQI Value"]}`)
+      .style("font-weight", "bolder");
 
     svg
       .append("g")
@@ -183,7 +188,7 @@ function AtAqiChart() {
 
     svg
       .append("text")
-      .attr("transform", `translate(${width / 2}, ${height + margin.top + 20})`) 
+      .attr("transform", `translate(${width / 2}, ${height + margin.top + 20})`)
       .style("text-anchor", "middle")
       .text("Chart8: The AQI values of Atlanta");
 
