@@ -11,21 +11,3 @@
     cursor: pointer;
     font-size: 28px;
   }
-
-  .lr-icons {
-    margin-top: 40px;
-    text-align: center;
-  }
-
-  .lr-icons img {
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    transition: all 0.3s ease;
-  }
-
-  .lr-icons img:hover {
-    cursor: pointer;
-    width: 60px;
-    height: 60px;
-  }
