@@ -25,8 +25,8 @@ const PieChart = () => {
   useEffect(() => {
     const pie = d3.pie().value((d) => d.percentage);
 
-    const width = 600;
-    const height = 600;
+    const width = 650;
+    const height = 650;
     const radius = Math.min(width, height) / 2 - 50;
 
     const arc = d3.arc().outerRadius(radius).innerRadius(0);

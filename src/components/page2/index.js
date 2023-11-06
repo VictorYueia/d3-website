@@ -21,14 +21,14 @@ const PageTwo = () => {
             Cities, veiled in smog, gasp for the light of dawn
           </p>
           <p>Air quality indices reveal the future’s scorn</p>
-          <p>A child’s cough, an echo in CO’s tight grip</p>
           <p
             onClick={() => setShowFirstChart(false)}
             className="clickable_text"
             style={{ color: showFirstChart ? "white" : "#218c74" }}
           >
-            Statistics on screens, capturing the urban trip
+            A child’s cough, an echo in CO’s tight grip
           </p>
+          <p>Statistics on screens, capturing the urban trip</p>
           <div className="lr-icons">
             <div>
               <span
